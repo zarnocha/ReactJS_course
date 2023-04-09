@@ -2,30 +2,30 @@ import useInput from "../hooks/use-input-basic-form";
 
 const BasicForm = (props) => {
   const {
-    enteredValue: enteredFirstName,
+    value: enteredFirstName,
     hasError: firstNameHasError,
     valueChangeHandler: firstNameChangeHandler,
     inputBlurHandler: firstNameBlurHandler,
     reset: resetFirstName,
-    isValueValid: firstNameIsValid,
+    valueIsValid: firstNameIsValid,
   } = useInput((value) => value.trim().length > 0);
 
   const {
-    enteredValue: enteredLastName,
+    value: enteredLastName,
     hasError: lastNameHasError,
     valueChangeHandler: lastNameChangeHandler,
     inputBlurHandler: lastNameBlurHandler,
     reset: resetLastName,
-    isValueValid: lastNameIsValid,
+    valueIsValid: lastNameIsValid,
   } = useInput((value) => value.trim().length > 0);
 
   const {
-    enteredValue: enteredEmail,
+    value: enteredEmail,
     hasError: emailHasError,
     valueChangeHandler: emailChangeHandler,
     inputBlurHandler: emailBlurHandler,
     reset: resetEmail,
-    isValueValid: emailIsValid,
+    valueIsValid: emailIsValid,
   } = useInput(
     (value) =>
       value.trim() !== "" &&

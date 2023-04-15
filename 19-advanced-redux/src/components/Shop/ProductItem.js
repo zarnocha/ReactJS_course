@@ -1,12 +1,13 @@
 import Card from "../UI/Card";
 import classes from "./ProductItem.module.css";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { cartActions } from "../../store/cart-slice";
+import { uiActions } from "../../store/ui-slice";
 
 const ProductItem = (props) => {
   const dispatch = useDispatch();
-
   const { title, price, description, id } = props;
+  const cartStatus = useSelector((state) => state.ui.cartIsVisible);
 
   const addToCartHandler = () => {
     dispatch(
@@ -16,6 +17,9 @@ const ProductItem = (props) => {
         price,
       })
     );
+    if (!cartStatus) {
+      dispatch(uiActions.toggle());
+    }
   };
 
   return (

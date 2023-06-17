@@ -1,7 +1,7 @@
-function add(a: number, b: number) {
+function add_ts(a: number, b: number) {
   return a + b;
 }
 
-const result = add(2, 5);
+const result_ts = add_ts("2", "5");
 
-console.log(result);
+console.log(result_ts);

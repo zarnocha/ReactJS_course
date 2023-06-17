@@ -1,7 +1,7 @@
-function add(a, b) {
+function add_js(a, b) {
   return a + b;
 }
 
-const result = add(2, 5);
+const result_js = add_js(2, 5);
 
-console.log(result);
+console.log(result_js);
